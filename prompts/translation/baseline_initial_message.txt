@@ -1,0 +1,19 @@
+Translate the following text from {source_lang} to {target_lang}. 
+Provide the response in this exact JSON format:
+{{
+    "translation": "translated text here",
+    "explanation": "detailed explanation of translation choices"
+}}
+
+DO NOT ADD additional fields to this template.
+
+IMPORTANT:
+1. Use direct Unicode characters (á, é, í, ó, ú, ñ) or (Á, É, Í, Ó, Ú, Ñ) instead of escape sequences
+2. DO NOT use \u escape sequences. Do not mention you are not ising it
+3. DO NOT use \ for escaping quotes \' or \". Just add the quotes instead.
+4. Use UTF-8 encoding
+5. Include both fields
+6. No text before or after the JSON
+7. Make sure the JSON keys are "translation" and "explanation". DO NOT TRANSLATE THEM
+
+Original text: {text}

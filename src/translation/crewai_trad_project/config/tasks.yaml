@@ -1,0 +1,59 @@
+translation_task:
+  description: >
+    Provide accurate, context-aware translations from {source_lang} to {target_lang} 
+    that capture the nuance and intent of the following text: {segment}
+    
+  expected_output: >
+    Include a detailed explanation of translation choices
+    Preserve the original meaning and tone
+  agent: translator
+
+review_task:
+  description: >
+    Review the translation from {source_lang} to {target_lang} for accuracy, nuance, and cultural appropriateness
+  expected_output: >
+    Provide translation in JSON format, with the following structure:
+    {{
+      "translation": "Translated text",
+      "explanation": "Detailed explanation of translation choices"
+    }}
+  agent: reviewer
+
+translation_task_rag:
+  description: >
+    Translate the following text from {source_lang} to {target_lang}, ensuring 
+    that the translation is context-aware and preserves the original nuance, intent, and tone. 
+    Text to translate: {segment}.
+    
+    Additionally:
+    - Provide a detailed explanation of your translation choices, focusing on how you handled 
+      any challenging phrases, idioms, or cultural references.
+  expected_output: >
+    {{
+      "translation": "Your translation here",
+      "explanation": "Your detailed explanation here"
+    }}
+  agent: translator
+
+review_task_rag:
+  description: >
+    Review the following translation from {source_lang} to {target_lang} for accuracy, nuance, 
+    and cultural appropriateness. Ensure that the original meaning and intent are preserved 
+    and provide suggestions for improvement if needed.
+    
+    Focus on:
+    - Accuracy of translation
+    - Nuance and tone
+    - Cultural appropriateness
+
+    Provide translation in JSON format, with the following structure:
+    {{
+      "translation": "Translated text",
+      "explanation": "Detailed explanation of translation choices"
+    }}
+  expected_output: >
+    {{
+      "translation": "Translated text",
+      "explanation": "Detailed explanation of translation choices"
+    }}
+  agent: reviewer
